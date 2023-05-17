@@ -1,8 +1,6 @@
 # 758231
 
-# **Title:**
-*Air transportation fare prediction*
-
+# **Title: Air transportation fare prediction**
 
 **Team members:**
 - Claudia Compagnone 758231
@@ -68,13 +66,29 @@ All the performed transformations were done to facilitate the models' understand
 
 
 ## **Experimental Design:**
-The dataset was split into a training set (75%) and a test set (25%). A simple Linear Regression model was used as the baseline due to its simplicity and common usage in predictive modeling. However, given the complexity and high-dimensionality of the dataset, more sophisticated machine learning models were employed, including Ridge, Lasso, Random Forest, and XGBoost.
 
-Ridge and Lasso Regression were used as they extend simple linear regression by adding a penalty term to the loss function, which helps to control overfitting and improve generalization. The Random Forest model was selected for its ability to handle a large number of features and its robustness to outliers and non-linear data.
+#### **Train-Test split:**
+The dataset was split into a training set (75%) and a test set (25%). 
 
+#### **Baseline model:**
+A **simple Linear Regression model** was used as the **baseline** due to its simplicity and common usage in predictive modeling. However, given the complexity and high-dimensionality of the dataset, more sophisticated machine learning models were employed, including Ridge, Lasso, SVR, Random Forest, and XGBoost.
+
+#### **More flexible models of non-linear relationships between the predictors and the response variable:**
+Regularization methods such as Ridge and Lasso Regression were used as they extend simple linear regression by adding a penalty term to the loss function, which helps to control overfitting and improve generalization. 
+Then, we tried even to train a Support Vector Regression (SVR) model, but the performance was below the previous models so we rejected it.
+
+#### **Ensemble learning methods:**
+We then moved to ensemble learning models, combining decisions from multiple underlying models, and using a voting technique to determine the final prediction. In particular, we built and tuned a Random Forest and an Extreme Gradient Boosting (XGBoost) model. We decided to use these two algorithms because one implements Boosting and one Bagging technique to sample the dataset.
+The Random Forest model was selected for its ability to handle a large number of features and its robustness to outliers and non-linear data.
 The XGBoost model was particularly highlighted due to its effectiveness in handling both sparse and dense datasets. This model was further refined by tuning its hyperparameters using Bayesian Optimization. Bayesian Optimization is a sequential design strategy for global optimization of black-box functions that works by constructing a posterior distribution of functions to find the maximum of these functions efficiently.
 
-The R2 score was chosen as the evaluation metric. It measures the proportion of variance in the dependent variable that can be predicted from the independent variables, providing a clear and interpretable measure of the models' performance.
+#### **Evaluation metrics**
+We chose to evaluate our models with three different metrics:
+- **RMSE**: it is the square root of mean squared error (squared distance between actual and predicted values). The output value you get is in the same unit as the required output variable which makes interpretation of loss easier. **Important** the prices in our dataset are given in rupees (1 INR == 0.012 USD), the Indian currency, this is why the RMSE is so high.
+- **MAPE**: the Mean Absolute Percentage Error is a measure of accuracy. It is the mean of all absolute percentage
+errors between the predicted and actual values. As a rule of thumb, a good result for MAPE is < 20%.
+- **R2**: it is a measure of goodness of fit (how well data are approximated by predictions). It measures the proportion of variance in the dependent variable that can be predicted from the independent variables, providing a clear and interpretable measure of the models' performance.
+
 
 
 ## **Results:**
@@ -83,6 +97,8 @@ All models performed reasonably well, but the XGBoost model with DMatrix data st
 To understand the contribution of each feature to the predictions, we performed feature importance analysis using SHAP (SHapley Additive exPlanations). This approach offers a unified measure of feature importance that allocates each feature an importance value for a particular prediction.
 
 Through SHAP, we found that 'class', 'duration', and 'number of stops' were the most influential predictors of flight prices. This aligns with our initial findings during the Exploratory Data Analysis phase, confirming that these factors significantly impact the price of a flight ticket. The SHAP values also allowed us to understand the model on a granular level and interpret its predictions, providing valuable insights into the relationships between the predictors and the target variable.
+
+
 
 ## **Conclusions:**
 The XGBoost model, with its high R2 score, provides a robust tool for predicting flight prices. This can offer valuable insights to customers and airlines, aiding in informed decision-making and strategic pricing. It's important to note, however, that while the model performs well on the given dataset, real-world conditions may introduce additional variables such as fuel prices and economic conditions. Future work could focus on incorporating these variables and expanding the dataset to improve the model's predictive accuracy and generalizability.
