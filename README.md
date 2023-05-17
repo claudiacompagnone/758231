@@ -94,7 +94,7 @@ errors between the predicted and actual values. As a rule of thumb, a good resul
 - **R2**: it is a measure of goodness of fit (how well data are approximated by predictions). It measures the proportion of variance in the dependent variable that can be predicted from the independent variables, providing a clear and interpretable measure of the models' performance.
 
 Below you can see a flowchart summarizing the steps we followed.
-![Flowchart](images/flowchart)
+![Flowchart](images/flowchart.png)
 
 
 
