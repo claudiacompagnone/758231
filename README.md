@@ -96,7 +96,7 @@ All models performed reasonably well, but the XGBoost model with DMatrix data st
 
 To understand the contribution of each feature to the predictions, we performed feature importance analysis using SHAP (SHapley Additive exPlanations). This approach offers a unified measure of feature importance that allocates each feature an importance value for a particular prediction.
 
-Through SHAP, we found that 'class', 'duration', and 'number of stops' were the most influential predictors of flight prices. This aligns with our initial findings during the Exploratory Data Analysis phase, confirming that these factors significantly impact the price of a flight ticket. The SHAP values also allowed us to understand the model on a granular level and interpret its predictions, providing valuable insights into the relationships between the predictors and the target variable.
+Through Shap, we found that 'class', 'duration', and 'number of stops' were the most influential predictors of flight prices. This aligns with our initial findings during the Exploratory Data Analysis phase, confirming that these factors significantly impact the price of a flight ticket. The SHAP values also allowed us to understand the model on a granular level and interpret its predictions, providing valuable insights into the relationships between the predictors and the target variable.
 
 
 
