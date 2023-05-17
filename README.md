@@ -84,7 +84,12 @@ Then, we tried even to train a Support Vector Regression (SVR) model, but the pe
 #### **Ensemble learning methods:**
 We then moved to ensemble learning models, combining decisions from multiple underlying models, and using a voting technique to determine the final prediction. In particular, we built and tuned a Random Forest and an Extreme Gradient Boosting (XGBoost) model. We decided to use these two algorithms because one implements Boosting and one Bagging technique to sample the dataset.
 The Random Forest model was selected for its ability to handle a large number of features and its robustness to outliers and non-linear data.
-The XGBoost model was particularly highlighted due to its effectiveness in handling both sparse and dense datasets. This model was further refined by tuning its hyperparameters using Bayesian Optimization. Bayesian Optimization is a sequential design strategy for global optimization of black-box functions that works by constructing a posterior distribution of functions to find the maximum of these functions efficiently.
+The XGBoost model was particularly highlighted due to its effectiveness in handling both sparse and dense datasets. 
+
+To understand the contribution of each feature to the predictions, we performed feature importance analysis using SHAP (SHapley Additive exPlanations). This approach offers a unified measure of feature importance that allocates each feature an importance value for a particular prediction.
+Through Shap, we found that 'class', 'duration', and 'number of stops' were the most influential predictors of flight prices. This aligns with our initial findings during the Exploratory Data Analysis phase, confirming that these factors significantly impact the price of a flight ticket.
+
+This model was further refined by tuning its hyperparameters using Bayesian Optimization. Bayesian Optimization is a sequential design strategy for global optimization of black-box functions that works by constructing a posterior distribution of functions to find the maximum of these functions efficiently.
 
 #### **Evaluation metrics**
 We chose to evaluate our models with three different metrics:
@@ -99,14 +104,7 @@ Below you can see a flowchart summarizing the steps we followed.
 
 
 ## **Results:**
-All models performed reasonably well, but the XGBoost model with DMatrix data structure and Bayesian hyperparameter optimization yielded the highest R2 score of 98,86%, indicating an excellent fit to the data, and the best MAPE of 8,5%.
-
-To understand the contribution of each feature to the predictions, we performed feature importance analysis using SHAP (SHapley Additive exPlanations). This approach offers a unified measure of feature importance that allocates each feature an importance value for a particular prediction.
-
-Through Shap, we found that 'class', 'duration', and 'number of stops' were the most influential predictors of flight prices. This aligns with our initial findings during the Exploratory Data Analysis phase, confirming that these factors significantly impact the price of a flight ticket. The SHAP values also allowed us to understand the model on a granular level and interpret its predictions, providing valuable insights into the relationships between the predictors and the target variable.
-
-![Shap](images/summary_plot.png)
-
+All models performed reasonably well, two in particular: Random Forest and the XGBoost model with DMatrix data structure and Bayesian hyperparameter optimization. If we look at the MAPE metric, the simple Random Forest model was the best performing one, yielding a 7,085% MAPE. However, this model was quite slow compared to the XGBoost one, which yielded the highest R2 score of 98,86%, indicating an excellent fit to the data, and still a really good MAPE of 8,5%. Therefore, all things considered we chose the second one as our best model.
 
 
 ## **Conclusions:**
