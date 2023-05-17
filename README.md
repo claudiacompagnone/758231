@@ -17,6 +17,9 @@ The project aims to provide a predictive model for flight ticket prices for a le
 
 ### **Methods:**
 
+#### **Programming environment:**
+We used Python as programming language and the web-based JupyterLab as IDE. We imported the following libraries: pandas 1.5.2, numpy 1.23.5, matplotlib 3.7.1, seaborn 0.12.2, dython 0.7.3, sklearn 1.2.0, xgboost 1.7.3, shap 0.41.0, bayesian-optimization 1.4.3.
+
 #### **Data Preprocessing:**
 The dataset provided required preprocessing for optimal use. Missing values, if any, were treated depending on the data type: for numerical variables, we used median imputation, while for categorical variables, the mode was used for imputation.
 
