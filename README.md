@@ -57,13 +57,15 @@ We found that the price of a ticket had substantial correlations with the class 
 
 
 #### **Feature Selection and Additional Transformations:**
+Upon reviewing the correlation matrix, we discovered a perfect positive correlation between the flight variable and airline, which led us to drop the flight variable.
+
 In the data preprocessing stage, we utilized the geocoding service of the geopy library, Nominatim, to extract geographical coordinates (latitude and longitude) for each unique source and destination city. These coordinates were stored in Python dictionaries for efficient retrieval.
 
 Subsequently, we enriched our DataFrame by introducing new columns for the latitude and longitude corresponding to each source and destination city. The geographical coordinates were mapped directly from the respective dictionaries.
 
 We then calculated the haversine distances, using vectorized operations from numpy for computational efficiency, between each source and destination city pair. The haversine formula, which computes great-circle distances between two points on a sphere from their longitudes and latitudes, was particularly suitable in our context for calculating Earth distances between cities.
 
-Upon reviewing the correlation matrix, we discovered a perfect positive correlation between the flight variable and airline, which led us to drop the flight variable. Lastly, we converted all non-numeric variables in our dataset into categorical types.
+Lastly, we converted all non-numeric variables in our dataset into categorical types.
 
 These transformations were implemented to aid model comprehension of the features, enabling more precise associations with flight prices, and enhance the effectiveness of subsequent predictive analysis or modeling tasks.
 
