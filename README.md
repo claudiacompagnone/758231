@@ -99,7 +99,7 @@ Below you can see a flowchart summarizing the steps we followed.
 
 
 ## **Results:**
-All models performed reasonably well, but the XGBoost model with DMatrix data structure and Bayesian hyperparameter optimization yielded the highest R2 score of ----, indicating an excellent fit to the data.
+All models performed reasonably well, but the XGBoost model with DMatrix data structure and Bayesian hyperparameter optimization yielded the highest R2 score of 98,86%, indicating an excellent fit to the data, and the best MAPE of 8,5%.
 
 To understand the contribution of each feature to the predictions, we performed feature importance analysis using SHAP (SHapley Additive exPlanations). This approach offers a unified measure of feature importance that allocates each feature an importance value for a particular prediction.
 
