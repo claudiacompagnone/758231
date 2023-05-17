@@ -47,7 +47,7 @@ After visualizing the distribution of our variables, we investigated how they re
 ![Bar Plot Class](images/Bar-plot-class.png)
 
 **4. Is price affected by departure time and arrival time?**
-![Bar Plot Dep](images/Bar-plot-departure_time.png)
+![Bar Plot Dep](Bar-plot-departure_time.png)
 ![Bar Plot Arr](images/Bar-plot-arr.png)
 
 **5. How does the airfare vary with the number of stops?**
