@@ -1,6 +1,6 @@
 # 758231
 
-# **Title: Air transportation fare prediction**
+# **Air transportation fare prediction**
 
 **Team members:**
 - Claudia Compagnone 758231
