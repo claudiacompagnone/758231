@@ -105,6 +105,8 @@ Below you can see a flowchart summarizing the steps we followed.
 
 ## **Results:**
 All models performed reasonably well, two in particular: Random Forest and the XGBoost model with DMatrix data structure and Bayesian hyperparameter optimization. If we look at the MAPE metric, the simple Random Forest model was the best performing one, yielding a 7,085% MAPE. However, this model was quite slow compared to the XGBoost one, which yielded the highest R2 score of 98,86%, indicating an excellent fit to the data, and still a really good MAPE of 8,5%. Therefore, all things considered we chose the second one as our best model.
+Below you can see the residual plot of both the Random Forest regresson and the selected XGBoost model, and you can see that the XGBoost one best fits the data, this is another reason why we have chosen this model.
+![ResidualPlot](images/residual.png)
 
 
 ## **Conclusions:**
