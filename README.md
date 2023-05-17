@@ -31,7 +31,7 @@ Once we read the csv file into a pandas DataFrame, we moved to the cleaning phas
 
 #### **Exploratory Data Analysis (EDA):**
 During EDA, we sought to visualize and understand the dataset's various features and their interrelationships. 
-First of all, we realized a correlation matrix, that was useful in order to decide whether we could drop some variables which were too highly correlated and could raise collinearity-related problem. 
+First of all, we realized a correlation matrix, that was useful in order to decide whether we could drop some variables which were too highly correlated and could raise collinearity-related problem. In our case, we used dyplot's functionalities to visualize correlations between both categorical and numerical variables. More specifically, we made use of dyplot's heatmaps, which are capable of representing correlations in a visually intuitive manner. This allowed us to efficiently analyze the pairwise correlation of multiple features in our dataset at once.
 
 ![Correlation Matrix](images/complete_correlation.png)
 
